@@ -1,0 +1,40 @@
+{% load static %}
+{#{% extends "base_generic.html" %}#}
+<!DOCTYPE html>
+
+
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+
+{#    <link rel="stylesheet" type="text/css" href="{% static 'font/Silkscreen_Rus_by_Mr.Enot' %}">#}
+
+    {% block title %} <title>Summers</title>  {% endblock %}
+    <style>
+        @font-face {
+            font-family: "Silkscreen_RUS_by_Mr_Enot";
+            src: url("{% static 'admin/fonts/Silkscreen/Silkscreen.ttf' %}");
+            font-size: 20px;
+        }
+        body {
+            font-family: "Silkscreen_RUS_by_Mr_Enot";
+            margin: 0px;
+            background-color: aliceblue;
+        }
+        div {
+            font-family: "Silkscreen_RUS_by_Mr_Enot";
+            margin: 100px;
+            font-size: 50px;
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+
+    {% block content %}
+    <div>
+        {{ text }}
+    </div>
+    {% endblock content %}
+</body>
+</html>

@@ -1,0 +1,45 @@
+{% extends "base_generic.html" %}
+    {% block content %}
+    <div>
+        <div>
+            {{ header }}
+        </div>
+{#        <div>#}
+{#            {% for article in articles %}#}
+{#                <div style="margin: 32px">#}
+{#                    <h3>{{ article.title }}</h3>#}
+{#                    <p>{{ article.text|safe }}</p>#}
+{#                </div>#}
+{#            {% endfor %}#}
+{#        </div>#}
+
+        {% for object in page_objects %}
+            <a class="btn-index-page" href="#">
+            <h3>{{ object.title }}</h3>
+            <p>{{ object.text|safe }}</p>
+            </a>
+        {% endfor %}
+
+        <!-- Элементы управления пагинацией -->
+        <div class="pagination">
+            <span class="step-links">
+                {% if page_objects.has_previous %}
+                    <a href="?page=1">&Lt;</a>
+                    <a href="?page={{ page_objects.previous_page_number }}">  &ltri;  </a>
+                {% endif %}
+
+                <span class="current">
+                    Страница {{ page_objects.number }} из {{ page_objects.paginator.num_pages }}.
+                </span>
+
+                {% if page_objects.has_next %}
+                    <a href="?page={{ page_objects.next_page_number }}">  &rtri;  </a>
+                    <a href="?page={{ page_objects.paginator.num_pages }}">&Gt;</a>
+                {% endif %}
+            </span>
+        </div>
+    </div>
+    <div>
+        <a style="font-size: 16px" href="{% url 'create_post' %}">Создать запись</a>
+    </div>
+    {% endblock content %}
