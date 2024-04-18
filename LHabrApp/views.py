@@ -13,14 +13,14 @@ def index(request):
 
 def index_blog(request):
     articles = Post.objects.all()
-    items_per_page = 6
-    paginator = Paginator(articles, items_per_page)
-    page_number = request.GET.get('page', 1)
-    page_objects = paginator.get_page(page_number)
+    # items_per_page = 6
+    # paginator = Paginator(articles, items_per_page)
+    # page_number = request.GET.get('page', 1)
+    # page_objects = paginator.get_page(page_number)
     content = {
         'header': "Embedded World",
         'articles': articles,
-        'page_objects': page_objects,
+        # 'page_objects': page_objects,
     }
     return render(request, 'LHabrApp/index_blog.html', content)
 
