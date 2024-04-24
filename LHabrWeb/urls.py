@@ -1,8 +1,10 @@
 from django.contrib import admin
 from django.urls import path, include
-from LHabrApp.views import good_morning, index_blog, index, create_post
+from LHabrApp.views import good_morning, index_blog, index, create_post, \
+    LLoginView, LLogoutView
 from django.conf import settings
 from django.conf.urls.static import static
+
 
 urlpatterns = [
     path("ckeditor5/", include('django_ckeditor_5.urls'), name="ck_editor_5_upload_file"),
@@ -11,9 +13,8 @@ urlpatterns = [
     path('good_morning/', good_morning, name='g_morming'),
     path('blog/', index_blog, name='blog_pg'),
     path('create/', create_post, name='create_post'),
-
-
-
+    path('accounts/login/', LLoginView.as_view(), name='login'),
+    path('accounts/logout', LLogoutView.as_view(), name='logout'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:

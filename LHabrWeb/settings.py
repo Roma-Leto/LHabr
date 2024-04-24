@@ -32,6 +32,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'LHabrApp.apps.LhabrappConfig',
     'django_ckeditor_5',
+    'rest_framework',                   #rest
+    'corsheaders',                      #rest
 ]
 
 MIDDLEWARE = [
@@ -42,6 +44,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',        #rest
+    'django.middleware.common.CommonMiddleware',    #rest
 ]
 
 ROOT_URLCONF = 'LHabrWeb.urls'
@@ -231,8 +235,20 @@ CKEDITOR_5_CONFIGS = {
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTH_USER_MODEL = 'LHabrApp.CustomUser'
-
 CKEDITOR_BASEPATH = "/my_static/ckeditor/ckeditor/"
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
+
+
+# Настройка системы разграничения доступа
+
+# Список валидаторов
+#AUTH_PASSWORD_VALIDATORS
+
+# Список имён классов, реализующих аутентификацию и авторизацию
+#AUTHENTICATION_BACKENDS
+
+# Имя класса моделей хранящих список зарегистрированных пользователей
+AUTH_USER_MODEL = 'LHabrApp.CustomUser'
+
+LOGIN_REDIRECT_URL = '/'

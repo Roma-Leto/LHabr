@@ -2,6 +2,17 @@ from django.shortcuts import render, redirect
 from django.core.paginator import Paginator
 from .forms import PostForm
 from .models import Post
+from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth.mixins import LoginRequiredMixin
+
+
+class LLogoutView(LoginRequiredMixin, LogoutView):
+    template_name = 'LHabrApp/logout.html'
+
+
+class LLoginView(LoginView):
+    template_name = 'LHabrApp/login.html'
+
 
 def good_morning(request):
     return render(request, 'for_my_baby.html', {'text': "Hello, my baby! I,m cool! =)"})
@@ -13,7 +24,7 @@ def index(request):
 
 def index_blog(request):
     articles = Post.objects.all()
-    items_per_page = 6
+    items_per_page = 4
     paginator = Paginator(articles, items_per_page)
     page_number = request.GET.get('page', 1)
     page_objects = paginator.get_page(page_number)

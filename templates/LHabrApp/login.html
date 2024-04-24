@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+
+{% block title %} LogIn {% endblock %}
+
+ {% block content %}
+    <h2>Вход</h2>
+    {% if user.is_authenticated %}
+        <p>Вы уже выполнили вход.</p>
+    {% else %}
+        <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type='hidden' name='next' value='{{ next }}'>
+        <button type="submit">Log in</button>
+        </form>
+    {% endif %}
+<a href="{% url 'index' %}"> Home page </a>
+ {% endblock content %}

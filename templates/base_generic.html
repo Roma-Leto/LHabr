@@ -36,6 +36,21 @@
     {% endblock style%}
 </head>
 <body>
+    <div>
+        {% if user.is_authenticated %}
+            <p>
+                Hi, {{  user.username }}!
+            </p>
+            <p>
+                <a style="font-size: 16px" href="{% url 'create_post' %}">Создать запись</a>
+            </p>
+            <p>
+                <a href="{% url 'logout' %}"> LogOut </a>
+            </p>
+        {% else %}
+            <a href="{% url 'login' %}"> LogIn </a>
+        {%  endif %}
+    </div>
     {% block content %}
     {% endblock content %}
 </body>
