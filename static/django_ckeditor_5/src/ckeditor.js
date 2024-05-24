@@ -32,7 +32,7 @@ import TableCellProperties from '@ckeditor/ckeditor5-table/src/tablecellproperti
 import Indent from '@ckeditor/ckeditor5-indent/src/indent';
 import IndentBlock from '@ckeditor/ckeditor5-indent/src/indentblock';
 import Highlight from '@ckeditor/ckeditor5-highlight/src/highlight';
-import TodoList from '@ckeditor/ckeditor5-list/src/todolist';
+import TodoList from '@ckeditor/ckeditor5-list/src/LHabrTodolist';
 import CodeBlock from '@ckeditor/ckeditor5-code-block/src/codeblock';
 import ListProperties from '@ckeditor/ckeditor5-list/src/listproperties';
 import SourceEditing from '@ckeditor/ckeditor5-source-editing/src/sourceediting';

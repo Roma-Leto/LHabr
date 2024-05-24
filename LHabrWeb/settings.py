@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'LHabrApp.apps.LhabrappConfig',
     'django_ckeditor_5',
+    'TodolistApp',
     'rest_framework',                   #rest
     'corsheaders',                      #rest
 ]
@@ -128,11 +129,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = 'static'
+# STATIC_ROOT = 'static'
 STATICFILES_DIRS = [
-    "static/django_ckeditor_5",
-    "static/admin",
-    "static/LHabrApp/",
+    BASE_DIR / "static"
 ]
 
 MEDIA_URL = '/media/'
@@ -168,7 +167,7 @@ customColorPalette = [
 
 # CKEDITOR_5_CUSTOM_CSS = 'path_to.css' # optional
 # CKEDITOR_5_FILE_STORAGE = "path_to_storage.CustomStorage" # optional
-CKEDITOR_5_USER_LANGUAGE=True
+CKEDITOR_5_USER_LANGUAGE = True
 CKEDITOR_5_CONFIGS = {
     'default': {
         'toolbar': ['heading', '|', 'bold', 'italic', 'link',
