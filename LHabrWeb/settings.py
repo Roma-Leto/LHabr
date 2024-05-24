@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'TodolistApp',
     'rest_framework',                   #rest
     'corsheaders',                      #rest
+    'django_extensions',
 ]
 
 MIDDLEWARE = [

@@ -6,28 +6,36 @@
     <meta charset="UTF-8">
     <title>Your todo list</title>
     <link rel="stylesheet" href="{% static 'TodolistApp/css/base.css' %}">
-
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon_io/favicon-16x16.png' %}" >
 </head>
 <body>
 {#Title#}
 <header>
     Todo List
+    <div id="subtitle">
+        Just Do It
+    </div>
 </header>
 
 {#Subtitle#}
-<subtitle>
-Just Do It
-</subtitle>
+
+<hr>
 {#Navigation#}
 <nav>
-    |<a href="#">create task</a>|
-    |<a href="#">delete task</a>|
-    |<a href="#">option num3</a>|
-    |<a href="#">option num4</a>|
+    |&#32;<a href="#">create task</a>&#32;|
+    |&#32;<a href="#">delete task</a>&#32;|
+    |&#32;<a href="#">option num3</a>&#32;|
+    |&#32;<a href="#">option num4</a>&#32;|
 </nav>
-<list>
+<hr>
+<div id="list">
+List
+</div>
+<hr>
+<footer>
 
-</list>
+    Footer
+</footer>
 
 </body>
 </html>

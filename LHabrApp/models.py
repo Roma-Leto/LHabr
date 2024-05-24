@@ -3,7 +3,6 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, Permis
 from django_ckeditor_5.fields import CKEditor5Field
 
 
-
 class CustomUserManager(BaseUserManager):
     def create_user(self, email, username, password=None):
         if not email:
@@ -44,10 +43,8 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
 
 class Post(models.Model):
-    title = models.CharField('Title',max_length=200)
+    title = models.CharField('Title', max_length=200)
     text = CKEditor5Field('Text', config_name='extends')
-    #content = models.TextField()
-    #content = RichTextField()
     date_posted = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
