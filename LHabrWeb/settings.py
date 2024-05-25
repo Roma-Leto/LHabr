@@ -12,7 +12,7 @@ print("base dir path", BASE_DIR)
 SECRET_KEY = 'django-insecure-7f&3c7-5r7z7wdwhzx$=49zvh11p1itr#+kp544a+wq@ce^8s2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'www.letoroma.ru',

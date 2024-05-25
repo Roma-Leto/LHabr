@@ -1,5 +1,5 @@
 *venv/*
 .idea
-*_pycache_*
+*pycache*
 db.sqlite3
 
