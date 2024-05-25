@@ -1,10 +1,10 @@
 from django.contrib import admin
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import path, include
 from LHabrApp.views import good_morning, index_blog, index, create_post, \
     LLoginView, LLogoutView
 from django.conf import settings
 from django.conf.urls.static import static
-import TodolistApp
 
 
 urlpatterns = [
@@ -23,5 +23,6 @@ if settings.DEBUG:
     # urlpatterns = [path('__debug__/', include('debug_toolbar.urls'))] + urlpatterns
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 
 

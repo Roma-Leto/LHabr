@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Your todo list</title>
-    <link rel="stylesheet" href="{% static 'TodolistApp/css/base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'TodolistApp/css/base.css' %}">
     <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon_io/favicon-16x16.png' %}" >
 </head>
 <body>
@@ -30,6 +30,23 @@
 <hr>
 <div id="list">
 List
+</div>
+<hr>
+<div id="form">
+    <form action="">
+
+        <label for="title_note">title note</label>
+        <input type="text" id="title_note" name="title_task">
+        <br>
+        <label for="deadline">deadline</label>
+        <input type="date" id="deadline" name="deadline">
+        <br>
+        <label for="note">note</label>
+        <textarea name="task" id="note" cols="30" rows="1"></textarea>
+        <br>
+        <button type="submit">send</button>
+        <button type="reset">reset</button>
+    </form>
 </div>
 <hr>
 <footer>

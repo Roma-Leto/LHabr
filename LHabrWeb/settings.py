@@ -12,7 +12,7 @@ print("base dir path", BASE_DIR)
 SECRET_KEY = 'django-insecure-7f&3c7-5r7z7wdwhzx$=49zvh11p1itr#+kp544a+wq@ce^8s2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'www.letoroma.ru',
@@ -130,9 +130,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = 'static'
+# STATIC_ROOT = 'static'
 STATICFILES_DIRS = [
-    BASE_DIR / "static"
+    BASE_DIR / "TodolistApp/static",
+    BASE_DIR / "static/img/favicon_io",
+    BASE_DIR / 'static',
 ]
 
 MEDIA_URL = '/media/'
